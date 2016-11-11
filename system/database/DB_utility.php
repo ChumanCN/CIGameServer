@@ -138,6 +138,17 @@ abstract class CI_DB_utility {
 		return in_array($database_name, $this->list_databases());
 	}
 
+
+	/*
+	* 
+	*
+	*/
+	public function table_exists($table_name)
+	{
+		return $this->db->query("SHOW TABLES LIKE '".$table_name."'")->num_rows() > 0;
+	}
+
+
 	// --------------------------------------------------------------------
 
 	/**
